@@ -1,14 +1,8 @@
-
 /* Les fonctions utilitaires */
 
-// Je récupère l'icône selon le statut
+// Je récupère l'icône selon le statut (
 function getStatusIcon(status) {
-    const icons = {
-        'wishlist': '📚',
-        'reading': '📖',
-        'finished': '✅'
-    };
-    return icons[status] || '📚';
+    return '';
 }
 
 // Je récupère le texte selon le statut

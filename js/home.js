@@ -1,4 +1,3 @@
-
 /* Traitement de la page d'accueil */
 
 // Je commence par calculer les statistiques de la bibliothèque
@@ -52,7 +51,7 @@ function displayRecentBooks() {
                 </span>
             </td>
             <td class="text-center">
-                ${book.favorite ? '<span class="fs-5"></span>' : '<span class="text-muted">-</span>'}
+                ${book.favorite ? '<span class="badge bg-warning text-dark">Favori</span>' : '<span class="text-muted">-</span>'}
             </td>
         </tr>
     `).join('');
