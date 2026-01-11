@@ -1,4 +1,3 @@
-
 /* Traitement de la page catalogue */
 
 // Je commence par définir mes variables
@@ -51,7 +50,7 @@ function createBookCard(book) {
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-start mb-2">
                         <h5 class="card-title">${book.title}</h5>
-                        ${book.favorite ? '<span class="fs-4"></span>' : ''}
+                        ${book.favorite ? '<span class="badge bg-warning text-dark">Favori</span>' : ''}
                     </div>
                     <h6 class="card-subtitle mb-2 text-muted">par ${book.author}</h6>
                     ${book.genre ? `<p class="text-primary small mb-1">${book.genre}</p>` : ''}
@@ -69,7 +68,7 @@ function createBookListItem(book) {
         <div class="list-group-item" data-id="${book.id}">
             <div class="d-flex w-100 justify-content-between align-items-center">
                 <div>
-                    <h5 class="mb-1">${book.title} ${book.favorite ? '' : ''}</h5>
+                    <h5 class="mb-1">${book.title} ${book.favorite ? '<span class="badge bg-warning text-dark">Favori</span>' : ''}</h5>
                     <p class="mb-1 text-muted small">${book.author} - ${book.genre || 'Non spécifié'} - ${book.pages || 0} pages</p>
                 </div>
                 <span class="badge bg-secondary">${getStatusIcon(book.status)} ${getStatusText(book.status)}</span>

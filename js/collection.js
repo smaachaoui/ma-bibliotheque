@@ -1,4 +1,3 @@
-
 /* Traitement de la page collection */
 
 let editingBookId = null;
@@ -29,7 +28,7 @@ function createCollectionBookCard(book) {
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-start mb-2">
                         <h5 class="card-title">${book.title}</h5>
-                        ${book.favorite ? '<span class="fs-4"></span>' : ''}
+                        ${book.favorite ? '<span class="badge bg-warning text-dark">Favori</span>' : ''}
                     </div>
                     <h6 class="card-subtitle mb-2 text-muted">par ${book.author}</h6>
                     ${book.genre ? `<p class="text-primary small mb-1">Genre: ${book.genre}</p>` : ''}
