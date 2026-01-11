@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ma bibliothèque - Ma collection</title>
+        
+        <!-- J'ajoute Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        
+        <!-- J'ajoute Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script defer src="script.js"></script>
+    </head>
+    
+    <body>
+        
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/logo.png" alt="Logo" height="40" class="d-inline-block align-text-top">
+                    </a>
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="catalog.html">Catalogue</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="collection.html">Collection</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="container my-5">
+            <section>
+                
+                <h1 class="text-center mb-4">Ma Collection</h1>
+
+                <!-- J'utilise un bouton Bootstrap -->
+                <div class="text-center mb-4">
+                    <button id="addBookBtn" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#bookFormModal">
+                        Ajouter un livre
+                    </button>
+                </div>
+
+                <!-- J'utilise le modal Bootstrap -->
+                <div class="modal fade" id="bookFormModal" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="formTitle">Ajouter un livre</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="bookForm">
+                                    <div class="mb-3">
+                                        <label for="bookTitle" class="form-label">Titre *</label>
+                                        <input type="text" class="form-control" id="bookTitle" name="title" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="bookAuthor" class="form-label">Auteur *</label>
+                                        <input type="text" class="form-control" id="bookAuthor" name="author" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="bookPages" class="form-label">Nombre de pages</label>
+                                        <input type="number" class="form-control" id="bookPages" name="pages" min="1">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="bookGenre" class="form-label">Genre</label>
+                                        <input type="text" class="form-control" id="bookGenre" name="genre" placeholder="Roman, Science-fiction, etc.">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="bookStatus" class="form-label">Statut *</label>
+                                        <select class="form-select" id="bookStatus" name="status" required>
+                                            <option value="wishlist">À lire</option>
+                                            <option value="reading">En cours de lecture</option>
+                                            <option value="finished">Terminé</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="bookFavorite" name="favorite">
+                                        <label class="form-check-label" for="bookFavorite">
+                                            Marquer comme favori
+                                        </label>
+                                    </div>
+
+                                    <input type="hidden" id="bookId" name="id">
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelBtn">Annuler</button>
+                                <button type="submit" form="bookForm" class="btn btn-primary">Enregistrer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Je crée la zone d'affichage avec la grille Bootstrap -->
+                <div id="booksDisplay" class="row g-4">
+
+                    <!-- Les livres seront affichés ici dynamiquement en JS -->
+                </div>
+
+            </section>
+        </main>
+
+        <footer class="bg-dark text-white text-center py-3 mt-5">
+            <div class="container">
+                <p class="mb-1">&copy; 2026 - 2027 | Ma Bibliothèque | Tout droits reservés.</p>
+                <p class="mb-0">Seifeddine Maachaoui</p>
+            </div>
+        </footer>
+
+    </body>
+</html>

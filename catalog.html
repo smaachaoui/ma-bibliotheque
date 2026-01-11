@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ma bibliothèque - Catalogue</title>
+        
+        <!-- J'ajoute Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        
+        <!-- J'ajoute Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script defer src="script.js"></script>
+    </head>
+
+    <body>
+
+       <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/logo.png" alt="Logo" height="40" class="d-inline-block align-text-top">
+                    </a>
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="catalog.html">Catalogue</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="collection.html">Collection</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+       </header>
+
+       <main class="container my-5">
+            <section>
+
+                <!-- J'utilise input-group Bootstrap pour la recherche -->
+                <div class="mb-4">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text">🔍</span>
+                        <input type="text" class="form-control" id="findBook" placeholder="Recherchez un livre ou un auteur">
+                    </div>
+                </div>
+
+                <div class="row">
+                    
+                    <!-- J'utilise les classes Bootstrap pour la sidebar -->
+                    <aside class="col-lg-3 col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Filtres</h5>
+                                
+                                <!-- Je crée les filtres avec form-check Bootstrap -->
+                                <div class="mb-4">
+                                    <h6 class="mb-3">Statut</h6>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="statusFilter" value="all" id="filterAll" checked>
+                                        <label class="form-check-label" for="filterAll">Tous</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="statusFilter" value="wishlist" id="filterWishlist">
+                                        <label class="form-check-label" for="filterWishlist">📚 À lire</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="statusFilter" value="reading" id="filterReading">
+                                        <label class="form-check-label" for="filterReading">📖 En cours</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="statusFilter" value="finished" id="filterFinished">
+                                        <label class="form-check-label" for="filterFinished">✅ Terminé</label>
+                                    </div>
+                                </div>
+
+                                <!-- Je crée les options d'affichage avec les boutons Bootstrap -->
+                                <div>
+                                    <h6 class="mb-3">Affichage</h6>
+                                    <div class="d-grid gap-2">
+                                        <button id="cardViewBtn" class="btn btn-outline-primary active">
+                                            🎴 Cartes
+                                        </button>
+                                        <button id="listViewBtn" class="btn btn-outline-primary">
+                                            📋 Liste
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Je crée la zone de contenu principal -->
+                    <div class="col-lg-9 col-md-8">
+                        <div id="catalogContent">
+                            <!-- Les livres seront affichés ici par JS -->
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+       </main>
+
+       <footer class="bg-dark text-white text-center py-3 mt-5">
+            <div class="container">
+                <p class="mb-1">&copy; 2026 - 2027 | Ma Bibliothèque | Tout droits reservés.</p>
+                <p class="mb-0">Seifeddine Maachaoui</p>
+            </div>
+       </footer>
+    </body>
+
+</html>
