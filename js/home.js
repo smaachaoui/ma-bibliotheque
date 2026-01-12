@@ -35,7 +35,7 @@ function displayRecentBooks() {
     const tbody = document.getElementById('recentBooksList');
     
     if (recentBooks.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="6" class="text-center text-muted py-4">Aucun livre dans votre bibliothèque. Commencez par en ajouter un !</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="6" class="text-center text-muted py-4">Aucun livre dans votre bibliothèque. Commencez par en ajouter un <a href="collection.html">ici</a></td></tr>';
         return;
     }
     
